@@ -1,0 +1,11 @@
+Положите сюда файлы .ogg или .wav с именами из SoundEvent.kt (пакет com.example.game.platformer.audio).
+
+Пример: ui_click.ogg, game_jump.ogg, …
+
+Дополнительно (геймплей):
+  game_teleport.ogg, game_spring.ogg, game_key_pickup.ogg, game_land.ogg,
+  game_block_hit.ogg, game_block_break.ogg, game_pressure_plate.ogg
+
+Пока файлов нет — игра работает без звука.
+
+Фоновая музыка — в соседней папке assets/music/ (см. MUSIC_HERE.txt там).
