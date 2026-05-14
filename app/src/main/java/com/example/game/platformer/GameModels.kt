@@ -10,6 +10,7 @@ enum class PlatformerDestination {
     Achievements,
     Records,
     Statistics,
+    MusicSettings,
     Playing,
     LevelComplete,
     GameComplete

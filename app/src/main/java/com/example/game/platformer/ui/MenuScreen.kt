@@ -52,6 +52,7 @@ fun MainMenuScreen(
     onLanguageToggle: () -> Unit,
     onPlay: () -> Unit,
     onOpenShop: () -> Unit,
+    onOpenMusic: () -> Unit,
     onOpenAchievements: () -> Unit,
     onOpenRecords: () -> Unit,
     onOpenStatistics: () -> Unit
@@ -118,6 +119,15 @@ fun MainMenuScreen(
                 .height(48.dp)
         ) {
             Text(s.shop, fontWeight = FontWeight.SemiBold)
+        }
+        Spacer(modifier = Modifier.height(14.dp))
+        PlatformerSecondaryButton(
+            onClick = onOpenMusic,
+            modifier = Modifier
+                .fillMaxWidth(0.72f)
+                .height(48.dp)
+        ) {
+            Text(s.mainMenuMusic, fontWeight = FontWeight.SemiBold)
         }
         Spacer(modifier = Modifier.height(14.dp))
         PlatformerSecondaryButton(

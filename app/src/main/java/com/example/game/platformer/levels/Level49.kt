@@ -1,0 +1,35 @@
+package com.example.game.platformer.levels
+
+import com.example.game.platformer.Level
+import com.example.game.platformer.RectObj
+import com.example.game.platformer.WindZone
+
+/** Вертикальный поток в узкой шахте + полка + финиш наверху. */
+fun level49(): Level = Level(
+    startX = 30f,
+    startY = -60f,
+    platforms = listOf(
+        RectObj(0f, 0f, 130f, 20f),
+        RectObj(260f, -170f, 150f, 20f),
+        RectObj(500f, -210f, 500f, 20f),
+    ),
+    hazards = listOf(
+        RectObj(130f, -12f, 130f, 10f),
+    ),
+    checkpoints = emptyList(),
+    goal = RectObj(900f, -280f, 40f, 70f),
+    windZones = listOf(
+        WindZone(
+            x = 125f,
+            y = -340f,
+            width = 100f,
+            height = 380f,
+            forceX = 120f,
+            forceY = -1320f
+        )
+    ),
+    coinPickups = listOf(
+        RectObj(320f, -212f, 22f, 22f),
+        RectObj(680f, -252f, 22f, 22f),
+    )
+)

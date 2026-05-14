@@ -130,7 +130,7 @@ fun GameScreen(
     onLevelCompleted: (LevelResult) -> Unit,
     playerMainColor: Color = Color(0xFF42A5F5),
     playerAccentColor: Color = Color(0xFF90CAF9),
-    totalLevelsInGame: Int = 20,
+    totalLevelsInGame: Int = 58,
     onAchievementUnlocked: (List<String>) -> Unit = {},
     onTimeAttackRetry: () -> Unit = {},
     

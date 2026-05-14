@@ -64,7 +64,16 @@ import com.example.game.ui.theme.GameTheme
 import kotlinx.coroutines.delay
 
 
-private const val ALL_LEVELS_UNLOCKED_FOR_TEST = false
+private const val ALL_LEVELS_UNLOCKED_FOR_TEST = true
+
+/** Экраны, на которых должен играть плейлист «уровня», а не меню (в т.ч. окно результата между уровнями). */
+private fun shouldPlayLevelBgm(screen: PlatformerDestination): Boolean =
+    when (screen) {
+        PlatformerDestination.Playing,
+        PlatformerDestination.LevelComplete,
+        PlatformerDestination.GameComplete -> true
+        else -> false
+    }
 
 @Composable
 fun PlatformerApp() {
@@ -90,6 +99,7 @@ fun PlatformerApp() {
     var achievementBanner by remember { mutableStateOf<String?>(null) }
     var audioEnabled by remember { mutableStateOf(loadAudioEnabled(appCtx)) }
     var appLanguage by remember { mutableStateOf(loadAppLanguage(appCtx)) }
+    var musicPrefsEpoch by remember { mutableIntStateOf(0) }
     val uiText = gameStrings(appLanguage)
 
     val soundPlayer = remember(appCtx) { GameSoundPlayer(appCtx) }
@@ -106,7 +116,18 @@ fun PlatformerApp() {
         soundPlayer.setSoundEnabled(audioEnabled)
         musicPlayer.setMusicEnabled(audioEnabled)
         if (!audioEnabled) return@LaunchedEffect
-        if (screen == PlatformerDestination.Playing) {
+        if (shouldPlayLevelBgm(screen)) {
+            musicPlayer.playLevelIfNeeded()
+        } else {
+            musicPlayer.playMenuIfNeeded()
+        }
+    }
+
+    LaunchedEffect(musicPrefsEpoch) {
+        if (musicPrefsEpoch == 0) return@LaunchedEffect
+        if (!audioEnabled) return@LaunchedEffect
+        musicPlayer.clearBgmStateCache()
+        if (shouldPlayLevelBgm(screen)) {
             musicPlayer.playLevelIfNeeded()
         } else {
             musicPlayer.playMenuIfNeeded()
@@ -163,6 +184,7 @@ fun PlatformerApp() {
                         selectedSkinId = loadSelectedSkinId(context)
                         screen = PlatformerDestination.Shop
                     },
+                    onOpenMusic = { screen = PlatformerDestination.MusicSettings },
                     onOpenAchievements = { screen = PlatformerDestination.Achievements },
                     onOpenRecords = { screen = PlatformerDestination.Records },
                     onOpenStatistics = { screen = PlatformerDestination.Statistics }
@@ -261,6 +283,14 @@ fun PlatformerApp() {
                 StatisticsScreen(
                     stats = loadPlayerStatistics(context, levels.size),
                     onBack = { screen = PlatformerDestination.MainMenu }
+                )
+            }
+
+            PlatformerDestination.MusicSettings -> {
+                MusicSettingsScreen(
+                    onBack = { screen = PlatformerDestination.MainMenu },
+                    onSaved = { musicPrefsEpoch += 1 },
+                    musicPlayer = musicPlayer,
                 )
             }
 
