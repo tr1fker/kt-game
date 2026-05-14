@@ -9,35 +9,35 @@ fun level24(): Level = Level(
     startX = 30f,
     startY = -60f,
     platforms = listOf(
-        RectObj(0f, 0f, 200f, 20f),
-        RectObj(250f, -100f, 150f, 20f),
-        RectObj(450f, -200f, 150f, 20f),
-        RectObj(650f, -300f, 150f, 20f),
-        RectObj(850f, -400f, 400f, 20f),
+        RectObj(0f, 0f, 300f, 20f),
+        RectObj(350f, -100f, 250f, 20f),
+        RectObj(650f, -200f, 250f, 20f),
+        RectObj(950f, -300f, 250f, 20f),
+        RectObj(1250f, -400f, 400f, 20f),
     ),
     hazards = emptyList(),
     checkpoints = listOf(
-        RectObj(500f, -240f, 40f, 40f)
+        RectObj(750f, -240f, 40f, 40f)
     ),
-    goal = RectObj(1150f, -470f, 40f, 70f),
+    goal = RectObj(1550f, -470f, 40f, 70f),
     chargingLasers = listOf(
         ChargingLaserDef(
             emitterX = 300f,
             emitterY = -400f,
-            activationRadiusPx = 400f,
-            chargeSeconds = 2.0f
+            activationRadiusPx = 500f,
+            chargeSeconds = 3.2f
         ),
         ChargingLaserDef(
-            emitterX = 600f,
+            emitterX = 700f,
             emitterY = -500f,
-            activationRadiusPx = 400f,
-            chargeSeconds = 2.5f
+            activationRadiusPx = 500f,
+            chargeSeconds = 3.8f
         ),
         ChargingLaserDef(
-            emitterX = 900f,
+            emitterX = 1100f,
             emitterY = -600f,
-            activationRadiusPx = 400f,
-            chargeSeconds = 3.0f
+            activationRadiusPx = 500f,
+            chargeSeconds = 4.2f
         )
     )
 )

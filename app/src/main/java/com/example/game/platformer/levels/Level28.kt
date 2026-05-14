@@ -7,23 +7,23 @@ fun level28(): Level = Level(
     startX = 30f,
     startY = -60f,
     platforms = listOf(
-        RectObj(0f, 0f, 200f, 20f),
-        RectObj(250f, -100f, 50f, 20f),
-        RectObj(100f, -200f, 50f, 20f),
-        RectObj(250f, -300f, 50f, 20f),
-        RectObj(100f, -400f, 50f, 20f),
-        RectObj(250f, -500f, 50f, 20f),
-        RectObj(100f, -600f, 50f, 20f),
-        RectObj(0f, -750f, 400f, 20f),
+        RectObj(0f, 0f, 250f, 20f),
+        RectObj(350f, -110f, 150f, 20f),
+        RectObj(100f, -220f, 150f, 20f),
+        RectObj(350f, -330f, 150f, 20f),
+        RectObj(100f, -440f, 150f, 20f),
+        RectObj(350f, -550f, 150f, 20f),
+        RectObj(100f, -660f, 150f, 20f),
+        RectObj(0f, -770f, 550f, 20f),
     ),
     hazards = listOf(
-        RectObj(-100f, 50f, 600f, 20f),
-        RectObj(0f, -700f, 50f, 20f),
-        RectObj(350f, -700f, 50f, 20f),
+        RectObj(-200f, 150f, 1000f, 40f),
+        // Hazards that were blocking the final jump have been removed
     ),
     checkpoints = listOf(
-        RectObj(130f, -440f, 40f, 40f)
+        RectObj(150f, -240f, 40f, 40f),
+        RectObj(400f, -570f, 40f, 40f)
     ),
-    goal = RectObj(180f, -820f, 40f, 70f),
-    visibilityRadiusWorld = 250f
+    goal = RectObj(250f, -840f, 40f, 70f),
+    visibilityRadiusWorld = 160f
 )

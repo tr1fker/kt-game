@@ -9,31 +9,28 @@ fun level23(): Level = Level(
     startX = 30f,
     startY = -60f,
     platforms = listOf(
-        RectObj(0f, 0f, 200f, 20f),
-        RectObj(300f, 0f, 200f, 20f),
-        RectObj(600f, 0f, 200f, 20f),
-        RectObj(900f, 0f, 200f, 20f),
-        
-        RectObj(0f, -200f, 200f, 20f),
-        RectObj(300f, -200f, 200f, 20f),
-        RectObj(600f, -200f, 200f, 20f),
-        RectObj(900f, -200f, 200f, 20f),
+        RectObj(0f, 0f, 1200f, 20f),
+        RectObj(1000f, -80f, 150f, 20f), // Stair to level 2
+        RectObj(0f, -160f, 1200f, 20f),
+        RectObj(50f, -240f, 150f, 20f),  // Stair to level 3
+        RectObj(0f, -320f, 1200f, 20f),
     ),
     hazards = listOf(
-        RectObj(200f, 50f, 100f, 20f),
-        RectObj(500f, 50f, 100f, 20f),
-        RectObj(800f, 50f, 100f, 20f),
+        RectObj(400f, -10f, 200f, 10f),
+        RectObj(400f, -170f, 200f, 10f),
     ),
     checkpoints = listOf(
-        RectObj(450f, -40f, 40f, 40f)
+        RectObj(600f, -40f, 40f, 40f),
+        RectObj(600f, -200f, 40f, 40f)
     ),
     keyPickups = listOf(
-        KeyPickup(RectObj(50f, -250f, 30f, 30f), doorId = 1),
-        KeyPickup(RectObj(950f, -50f, 30f, 30f), doorId = 2),
+        // Lowered Y to be right on the floor
+        KeyPickup(RectObj(1100f, -20f, 30f, 30f), doorId = 1),
+        KeyPickup(RectObj(50f, -180f, 30f, 30f), doorId = 2),
     ),
     lockedDoors = listOf(
-        LockedDoor(id = 1, rect = RectObj(250f, -200f, 20f, 200f)),
-        LockedDoor(id = 2, rect = RectObj(850f, -200f, 20f, 200f)),
+        LockedDoor(id = 1, rect = RectObj(300f, -160f, 20f, 160f)),
+        LockedDoor(id = 2, rect = RectObj(900f, -320f, 20f, 160f)),
     ),
-    goal = RectObj(1050f, -70f, 40f, 70f)
+    goal = RectObj(1100f, -390f, 40f, 70f)
 )

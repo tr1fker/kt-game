@@ -9,19 +9,19 @@ fun level26(): Level = Level(
     startX = 30f,
     startY = -60f,
     platforms = listOf(
-        RectObj(0f, 0f, 200f, 20f),
-        RectObj(1200f, -300f, 200f, 20f),
+        RectObj(0f, 0f, 250f, 20f),
+        RectObj(1300f, -300f, 300f, 20f),
     ),
     movingPlatforms = listOf(
-        MovingPlatformDef(300f, 0f, 100f, 20f, MovingPlatformMotion.Horizontal, 200f, 3f),
-        MovingPlatformDef(600f, -100f, 100f, 20f, MovingPlatformMotion.Vertical, 200f, 4f),
-        MovingPlatformDef(900f, -200f, 100f, 20f, MovingPlatformMotion.Circular, 100f, 5f),
+        MovingPlatformDef(400f, 0f, 150f, 20f, MovingPlatformMotion.Horizontal, 150f, 4f),
+        MovingPlatformDef(750f, -100f, 150f, 20f, MovingPlatformMotion.Vertical, 150f, 5f),
+        MovingPlatformDef(1100f, -200f, 150f, 20f, MovingPlatformMotion.Circular, 80f, 6f),
     ),
     hazards = listOf(
-        RectObj(200f, 100f, 1000f, 20f)
+        RectObj(-200f, 150f, 2000f, 40f)
     ),
     checkpoints = listOf(
-        RectObj(600f, -250f, 40f, 40f)
+        RectObj(750f, -250f, 40f, 40f)
     ),
-    goal = RectObj(1300f, -370f, 40f, 70f)
+    goal = RectObj(1500f, -370f, 40f, 70f)
 )

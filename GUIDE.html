@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Руководство по игре</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Руководство по игре</h1>
+</header>
+<h1
+id="мини-платформер-mini-platformer-полное-руководство">Мини-платформер
+(Mini Platformer) — Полное руководство</h1>
+<p>Добро пожаловать в официальную документацию игры «Мини-платформер».
+Это классический 2D-платформер, созданный на языке Kotlin с
+использованием современных технологий Android (Jetpack Compose).</p>
+<hr />
+<h2 id="обзор-игры">🎮 Обзор игры</h2>
+<p>«Мини-платформер» — это игра, в которой игроку предстоит проходить
+полосы препятствий, собирать монеты и открывать новые уровни. Игра
+сочетает в себе динамичный геймплей, систему прогрессии, магазин скинов
+и достижения.</p>
+<h3 id="основные-фичи">Основные фичи:</h3>
+<ul>
+<li><strong>29 уникальных уровней</strong> в основной кампании.</li>
+<li><strong>Режим Time Attack (На время):</strong> Прохождение уровней с
+жестким лимитом времени.</li>
+<li><strong>Система чекпоинтов:</strong> Не нужно начинать уровень с
+начала после смерти.</li>
+<li><strong>Магазин скинов:</strong> Кастомизация персонажа за собранные
+монеты.</li>
+<li><strong>Достижения и рекорды:</strong> Отслеживание личного
+прогресса и выполнение испытаний.</li>
+<li><strong>Локализация:</strong> Полная поддержка русского и
+английского языков.</li>
+</ul>
+<hr />
+<h2 id="механики-игры">🕹 Механики игры</h2>
+<h3 id="управление">Управление:</h3>
+<ul>
+<li><strong>Влево / Вправо:</strong> Перемещение персонажа по
+горизонтали.</li>
+<li><strong>Прыжок:</strong> Прыжок вверх (сила прыжка может зависеть от
+окружения).</li>
+<li><strong>Пауза (клавиша Esc):</strong> Приостановка игрового
+процесса.</li>
+</ul>
+<h3 id="препятствия-и-объекты">Препятствия и объекты:</h3>
+<ol type="1">
+<li><strong>Платформы:</strong> Твердые поверхности. Бывают обычные и
+<strong>скользкие</strong> (лёд).</li>
+<li><strong>Шипы / Опасности:</strong> Мгновенно возвращают игрока к
+последнему чекпоинту.</li>
+<li><strong>Движущиеся платформы:</strong> Двигаются по горизонтали,
+вертикали или по кругу.</li>
+<li><strong>Исчезающие платформы:</strong> Циклически появляются и
+пропадают.</li>
+<li><strong>Пружины (Spring Pads):</strong> Подбрасывают игрока высоко
+вверх.</li>
+<li><strong>Зоны ветра (Wind Zones):</strong> Толкают игрока в
+определенном направлении.</li>
+<li><strong>Телепорты:</strong> Мгновенно перемещают игрока между двумя
+точками.</li>
+<li><strong>Заряжающиеся лазеры:</strong> Опасные зоны, которые
+выстреливают после короткой зарядки.</li>
+<li><strong>Ключи и двери:</strong> Нужно найти ключ определенного
+цвета, чтобы открыть запертую дверь.</li>
+<li><strong>Разрушаемые блоки:</strong> Блоки, которые можно разрушить
+(прыжком или касанием, в зависимости от логики).</li>
+<li><strong>Одноразовые платформы:</strong> Разрушаются через короткое
+время после того, как игрок на них наступил.</li>
+<li><strong>Нажимные плиты и мосты:</strong> Плиты активируют временные
+мосты для прохода.</li>
+<li><strong>Ограниченная видимость:</strong> На некоторых уровнях обзор
+ограничен радиусом вокруг игрока.</li>
+</ol>
+<hr />
+<h2 id="описание-уровней-все-29-уровней">🗺 Описание уровней (Все 29
+уровней)</h2>
+<ol type="1">
+<li><strong>Уровень 1: Основы</strong> — Знакомство с управлением и
+прыжками.</li>
+<li><strong>Уровень 2: Вертикальность</strong> — Первый опыт подъема по
+платформам.</li>
+<li><strong>Уровень 3: Опасные шипы</strong> — Введение смертельных
+препятствий.</li>
+<li><strong>Уровень 4: Движение</strong> — Горизонтально движущиеся
+платформы.</li>
+<li><strong>Уровень 5: Лифты</strong> — Вертикально движущиеся
+платформы.</li>
+<li><strong>Уровень 6: Карусель</strong> — Платформы, движущиеся по
+кругу.</li>
+<li><strong>Уровень 7: Исчезающий путь</strong> — Знакомство с
+циклически появляющимися платформами.</li>
+<li><strong>Уровень 8: Ледяная трасса</strong> — Введение скользких
+платформ.</li>
+<li><strong>Уровень 9: Попутный ветер</strong> — Горизонтальный ветер,
+помогающий или мешающий прыжкам.</li>
+<li><strong>Уровень 10: Восходящий поток</strong> — Вертикальный ветер,
+подбрасывающий игрока.</li>
+<li><strong>Уровень 11: Порталы</strong> — Знакомство с системой
+телепортации.</li>
+<li><strong>Уровень 12: Прыгучесть</strong> — Первое использование
+пружин для высоких прыжков.</li>
+<li><strong>Уровень 13: Поиск ключа</strong> — Введение запертых дверей
+и ключей.</li>
+<li><strong>Уровень 14: Прорыв</strong> — Использование разрушаемых
+блоков для прохода.</li>
+<li><strong>Уровень 15: Хрупкий путь</strong> — Использование платформ,
+которые разрушаются под ногами.</li>
+<li><strong>Уровень 16: Опасный ритм</strong> — Синхронизация движений с
+циклическими опасностями.</li>
+<li><strong>Уровень 17: Нажимной механизм</strong> — Активация временных
+мостов с помощью плит.</li>
+<li><strong>Уровень 18: Испытание на точность</strong> — Комбинация
+прыжков и сбора монет.</li>
+<li><strong>Уровень 19: Туман</strong> — Первый уровень с ограниченным
+радиусом видимости.</li>
+<li><strong>Уровень 20: Лазерная угроза</strong> — Введение заряжающихся
+лазеров.</li>
+<li><strong>Уровень 21: Gusty Gauntlet</strong> — Сложное испытание
+сильным боковым ветром.</li>
+<li><strong>Уровень 22: Frozen Ascent</strong> — Крутой вертикальный
+подъем по скользким платформам.</li>
+<li><strong>Уровень 23: The Key Chamber</strong> — Сложный лабиринт с
+несколькими ключами и дверями.</li>
+<li><strong>Уровень 24: Laser Rain</strong> — Уклонение от множества
+одновременно работающих лазеров.</li>
+<li><strong>Уровень 25: Vanishing Path</strong> — Скоростное прохождение
+по исчезающим платформам.</li>
+<li><strong>Уровень 26: Mechanical Works</strong> — Фабрика с множеством
+движущихся механизмов всех типов.</li>
+<li><strong>Уровень 27: Spring Bound</strong> — Уровень, требующий
+мастерского владения пружинами.</li>
+<li><strong>Уровень 28: Abyssal Descent</strong> — Глубокий спуск в
+полной темноте с препятствиями.</li>
+<li><strong>Уровень 29: The Ultimate Challenge</strong> — Финальное
+испытание, объединяющее абсолютно все механики игры.</li>
+</ol>
+<hr />
+<h2 id="система-достижений-и-прогресс">🏆 Система достижений и
+прогресс</h2>
+<h3 id="категории-достижений">Категории достижений:</h3>
+<ul>
+<li><strong>Смерти:</strong> За накопление определенного количества
+падений (от 1 до 1000).</li>
+<li><strong>Монеты:</strong> За общее количество собранных монет (от 1
+до 1000).</li>
+<li><strong>Прохождение:</strong> За количество завершенных
+уровней.</li>
+<li><strong>Скины:</strong> “Модник” (за покупку первого скина) и
+“Полная коллекция” (за открытие всех скинов).</li>
+<li><strong>Мастерство:</strong> “Мастер платформ” (за прохождение всех
+уровней игры).</li>
+</ul>
+<h3 id="рекорды">Рекорды:</h3>
+<p>Игра сохраняет лучшее время прохождения и количество собранных звезд
+(максимум 3) для каждого уровня. Звезды начисляются за быстрое
+прохождение без смертей.</p>
+<hr />
+<h2 id="магазин-скинов">👕 Магазин скинов</h2>
+<p>В магазине доступны следующие варианты кастомизации: 1.
+<strong>Классика (Classic):</strong> Бесплатно. 2. <strong>Арбуз
+(Watermelon):</strong> 45 монет. 3. <strong>Лимон (Lemon):</strong> 60
+монет. 4. <strong>Лаванда (Lavender):</strong> 80 монет. 5. <strong>Мята
+(Mint):</strong> 100 монет.</p>
+<hr />
+<h2 id="техническая-информация">🛠 Техническая информация</h2>
+<ul>
+<li><strong>Язык разработки:</strong> Kotlin.</li>
+<li><strong>UI Фреймворк:</strong> Jetpack Compose (Modern Android
+Development).</li>
+<li><strong>Архитектура:</strong> Компонентный подход с использованием
+State-менеджмента Compose.</li>
+<li><strong>Сборка:</strong> Gradle (используется JVM 17+).</li>
+<li><strong>Локализация:</strong> Динамическое переключение языков
+(RU/EN).</li>
+</ul>
+<hr />
+<h2 id="статистика">📝 Статистика</h2>
+<p>В соответствующем разделе меню вы можете отследить: * Общее время в
+игре. * Количество пройденных уровней и открытых достижений. * Всего
+собранных монет и потраченных на скины. * Общее количество смертей.</p>
+</body>
+</html>

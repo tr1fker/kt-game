@@ -64,7 +64,7 @@ import com.example.game.ui.theme.GameTheme
 import kotlinx.coroutines.delay
 
 
-private const val ALL_LEVELS_UNLOCKED_FOR_TEST = false
+private const val ALL_LEVELS_UNLOCKED_FOR_TEST = true
 
 @Composable
 fun PlatformerApp() {
